@@ -42,12 +42,12 @@ def main():
             if data:
                 # Display balance without decimal
                 balance = data['result']['balance']['balance']
-                balance_str = "B:" + str(int(balance))
+                balance_str = "Balance:" + str(int(balance))
                 print(balance_str)
 
                 # Sum all miners' hashrate
                 miners_hashrate_sum = int(sum(miner['hashrate'] for miner in data['result']['miners']) / 1000)
-                hashrate_str = "H:" + str(miners_hashrate_sum) + "kH/s"
+                hashrate_str = "Hashrate:" + str(miners_hashrate_sum) + "kH/s"
                 print(hashrate_str)
 
                 lcd.message = balance_str + "\n" + hashrate_str
